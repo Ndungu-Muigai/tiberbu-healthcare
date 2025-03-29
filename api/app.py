@@ -16,7 +16,6 @@ app.config["SQLALCHEMY_ECHO"] = False
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 
-
 #Initializing the migrations
 migrate=Migrate(app, db)
 db.init_app(app)
