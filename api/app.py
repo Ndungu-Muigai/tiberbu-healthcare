@@ -12,6 +12,11 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////tmp/database.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False  
 app.config["SQLALCHEMY_ECHO"] = False
 
+#Session configuration
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+
+
 #Initializing the migrations
 migrate=Migrate(app, db)
 db.init_app(app)
