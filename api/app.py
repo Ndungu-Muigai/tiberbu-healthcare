@@ -28,3 +28,6 @@ class Index(Resource):
         return {"message": "Welcome to the Tiberbu Healthcare API"}
     
 api.add_resource(Index, "/")
+
+if __name__=="__main__":
+    app.run(port=5555, debug=True)
