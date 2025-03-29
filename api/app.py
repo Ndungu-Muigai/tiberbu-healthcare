@@ -7,6 +7,11 @@ from api.models import db
 #Initializing Flask
 app=Flask(__name__)
 
+# Database configuration
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False  
+app.config["SQLALCHEMY_ECHO"] = False
+
 #Initializing the migrations
 migrate=Migrate(app, db)
 db.init_app(app)
