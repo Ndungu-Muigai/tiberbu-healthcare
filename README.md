@@ -63,20 +63,6 @@ Ensure you have the following installed:
 - **Doctors**: `POST /doctors`, `GET /doctors/{id}`, `PUT /doctors/{id}`, `DELETE /doctors/{id}`
 - **Appointments**: `POST /appointments`, `GET /appointments/{id}`, `PUT /appointments/{id}`, `DELETE /appointments/{id}`
 
-Full API documentation is available at `http://localhost:5000/docs` (Swagger UI).
-
-## Testing
-Run unit tests with:
-```sh
-pytest
-```
-
-## Deployment
-Use Docker for deployment:
-```sh
-docker-compose up --build
-```
-
 ## Contributing
 Feel free to fork this repository and submit pull requests.
 
