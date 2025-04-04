@@ -2,7 +2,7 @@ from flask import Flask, make_response, jsonify, request
 from flask_restful import Api, Resource
 from flask_session import Session
 from flask_migrate import Migrate
-from api.models import db
+from api.models import db, Pateint, NexOfKin, Doctor, Appointment
 
 #Initializing Flask
 app=Flask(__name__)
@@ -32,6 +32,15 @@ class Index(Resource):
         return {"message": "Welcome to the Tiberbu Healthcare API"}
     
 api.add_resource(Index, "/")
+
+#Doctors resource
+class Doctors(Resource):
+    def get(self):
+
+        #Getting the doctors details from the database
+        all_doctors=Doctor.query.all()
+
+        #
 
 if __name__=="__main__":
     app.run(port=5555, debug=True)

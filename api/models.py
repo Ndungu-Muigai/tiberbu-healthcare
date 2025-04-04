@@ -12,7 +12,7 @@ class Pateint(db.Model):
     email=db.Column(db.String, nullable=False, unique=True)
     phone_number=db.Column(db.String, nullable=False)
     gender=db.Column(db.Enum("Male", "Female", name="gender_enum"), nullable=False)
-    dob=db.Column(db.DateTime, nullable=False)
+    dob=db.Column(db.Date, nullable=False)
     insurance_name=db.Column(db.String, nullable=False)
     insurance_number=db.Column(db.String, nullable=False)
     created_at=db.Column(db.DateTime, server_default=db.func.now())
