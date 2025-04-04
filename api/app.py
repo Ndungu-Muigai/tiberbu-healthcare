@@ -3,7 +3,7 @@ from flask_restful import Api, Resource
 from flask_session import Session
 from flask_migrate import Migrate
 from api.models import db, Pateint, NexOfKin, Doctor, Appointment
-from schema import NextOfKinSchema, PatientSchema, DoctorSchema, AppointmentSchema
+from schema import AppointmentSchema, DoctorSchema, NextOfKinSchema, PatientSchema
 
 #Initializing Flask
 app=Flask(__name__)
