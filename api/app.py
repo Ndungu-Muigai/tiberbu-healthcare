@@ -2,7 +2,7 @@ from flask import Flask, make_response, jsonify, request
 from flask_restful import Api, Resource
 from flask_session import Session
 from flask_migrate import Migrate
-from api.models import db, Pateint, NexOfKin, Doctor, Appointment
+from api.models import db, Appointment, Doctor, NexOfKin, Pateint
 from schema import AppointmentSchema, DoctorSchema, NextOfKinSchema, PatientSchema
 
 #Initializing Flask
