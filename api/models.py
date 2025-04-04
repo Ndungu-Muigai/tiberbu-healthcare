@@ -15,6 +15,7 @@ class Pateint(db.Model):
     dob=db.Column(db.Date, nullable=False)
     insurance_name=db.Column(db.String, nullable=False)
     insurance_number=db.Column(db.String, nullable=False)
+    password=db.Column(db.String, nullable=False)
     created_at=db.Column(db.DateTime, server_default=db.func.now())
     updated_at=db.Column(db.DateTime, server_default=db.func.now(), onupdate=db.func.now())
 
@@ -44,6 +45,7 @@ class Doctor(db.Model):
     email=db.Column(db.String, nullable=False, unique=True)
     phone_number=db.Column(db.String, nullable=False)
     department=db.Column(db.String, nullable=False)
+    password=db.Column(db.String, nullable=False)
     created_at=db.Column(db.DateTime, server_default=db.func.now())
     updated_at=db.Column(db.DateTime, server_default=db.func.now(), onupdate=db.func.now())
 
