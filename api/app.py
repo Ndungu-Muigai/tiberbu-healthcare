@@ -2,7 +2,10 @@ from flask import Flask, make_response, jsonify, request
 from flask_restful import Api, Resource
 from flask_session import Session
 from flask_migrate import Migrate
+import hashlib
 from api.models import db, Appointment, Doctor, NexOfKin, Pateint
+from Generations.password import generate_random_password
+
 from schema import AppointmentSchema, DoctorSchema, NextOfKinSchema, PatientSchema
 
 #Initializing Flask
@@ -70,9 +73,15 @@ class Doctors(Resource):
                     "message" : "An account with this email already exists"
                 }
             ), 409)
+        
+        #Generating a random password
+        new_password=generate_random_password()
+
+        #Hashing the password
+        hashed_password=hashlib.md5(new_password.encode("utf-8")).hexdigest()
 
         #Inserting the data into the database
-        new_doctor=Doctor(first_name=first_name,last_name=last_name,email=email,phone_number=phone_number, department=department)
+        new_doctor=Doctor(first_name=first_name,last_name=last_name,email=email,phone_number=phone_number, department=department, password=hashed_password)
         db.session.add(new_doctor)
         db.session.commit()
 
